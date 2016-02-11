@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterTemplate.master.cs" Inherits="OglasnikIT.MasterTemplate" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .navbar-brand {
+            padding: 0px; /* firefox bug fix */
+        }
+
+            .navbar-brand > img {
+                height: 100%;
+                padding: 0px; /* firefox bug fix */
+                width: auto;
+            }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.aspx">
+                    <img class="img-responsive" src="images/logo.png" /></a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.aspx">Почетна</a></li>
+                    <li><a href="vnesiOglas.aspx">Внеси оглас</a></li>
+                    <li><a onserver href="prebaraj.aspx">Пребарај</a></li>
+                    <li>
+                        <asp:HyperLink ID="linkLogin" runat="server" NavigateUrl="~/loginReg.aspx">Логирај се / Регистрирај се</asp:HyperLink></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="">
+                        <asp:HyperLink ID="linkLogOut" runat="server" NavigateUrl="~/logOut.aspx">Одлогирај се</asp:HyperLink></li>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var curentFile = window.location.pathname.split("/").pop();
+        if (curentFile == "") curentFile = "index.aspx";
+        if (curentFile != "index.aspx") {
+            $('ul.nav > li > a[href="' + "index.aspx" + '"]').parent().removeClass('active');
+        }
+        $('ul.nav > li > a[href="' + curentFile + '"]').parent().addClass('active');
+    </script>
+    <script>
+        $(function () {
+
+            $('#login-form-link').click(function (e) {
+                $("#loginform").delay(100).fadeIn(100);
+                $("#registerform").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function (e) {
+                $("#registerform").delay(100).fadeIn(100);
+                $("#loginform").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+        });
+
+    </script>
+</body>
+</html>

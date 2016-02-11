@@ -1,0 +1,6 @@
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\bin\OglasnikIT.dll.config
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\bin\OglasnikIT.dll
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\bin\OglasnikIT.pdb
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\obj\Debug\OglasnikIT.dll
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\obj\Debug\OglasnikIT.pdb
+c:\users\vasko\documents\visual studio 2013\Projects\OglasnikIT\OglasnikIT\obj\Debug\OglasnikIT.csprojResolveAssemblyReference.cache
